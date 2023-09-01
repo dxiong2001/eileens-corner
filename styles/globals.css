@@ -68,6 +68,47 @@ button {
 }
 
 /* Header */
+.dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 30px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  color: #f5356c;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f5356c;
+}
 nav {
   padding: 1.1rem 5rem;
 }
@@ -81,11 +122,22 @@ nav ul li {
   font-size: 0.9rem;
   font-weight: 600;
 }
+#logo-text {
+  font-size: medium;
+  font-weight: 800;
+  color: #f5356c;
+  margin-left: 70px;
+  margin-top: -50px;
+}
+
+#logo-image {
+}
 
 .header {
   height: 100vh;
   justify-content: space-between;
   padding: 1.1rem 5rem 0rem 5rem;
+  overflow: hidden;
 }
 .header h1 {
   margin: auto;
@@ -155,11 +207,11 @@ nav ul li {
   padding-top: 5rem;
 }
 .image-collage {
-  border-radius: 15px;
+  border-radius: 10px;
   border-style: solid;
   border-color: #f5356c;
-  border-width: 5px;
-  height: 400px;
+  border-width: 2px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -175,6 +227,42 @@ footer span {
 footer ul li {
   list-style-type: none;
   margin-left: 1rem;
+}
+
+/* Reviews */
+#review-text {
+  margin-top: 30px;
+  margin-left: 25%;
+  width: 50%;
+  height: 30vh;
+  resize: none;
+  /* font-family: "Arial", Times, serif; */
+  font-size: 18px;
+}
+
+form input {
+  font-size: 18px;
+  width: 50%;
+  height: 35px;
+  margin-left: 25%;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: solid;
+  outline-width: 0;
+}
+
+form label {
+  margin-left: 25%;
+  font-size: 20px;
+}
+
+form button {
+  margin-top: 10px;
+  margin-left: 25%;
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  font-family: "Roboto Mono";
 }
 
 /* --------- Responsive Design --------- */

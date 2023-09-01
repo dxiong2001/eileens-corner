@@ -27,28 +27,28 @@ export default function About() {
         </div>
 
         <div className="image-collage">
-          <Image
+          {/* <Image
             src="/images/section-image-collage1.jpg"
             width={225}
             height={400}
             alt="collage image 1"
-          />
+          /> */}
           <Image
             src="/images/section-image-collage2.jpg"
-            width={225}
-            height={400}
+            width={330}
+            height={600}
             alt="collage image 2"
           />
           <Image
             src="/images/section-image-collage3.jpg"
-            width={225}
-            height={400}
+            width={330}
+            height={600}
             alt="collage image 3"
           />
         </div>
       </div>
 
-      <div className="flex partners justify-space">
+      {/* <div className="flex partners justify-space">
         <Image
           src="/images/partners/wallety.png"
           height={45}
@@ -79,7 +79,7 @@ export default function About() {
           width={180}
           alt="telefy"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

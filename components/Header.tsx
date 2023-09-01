@@ -20,9 +20,9 @@ export default function Header() {
           </a>
         </div>
         <Image
-          src="https://img.freepik.com/premium-vector/black-line-art-flower-california-poppy-with-red-spots-doodle-poppy_624728-95.jpg"
-          width={500}
-          height={500}
+          src="/images/poppy.jpg"
+          width={1000}
+          height={1000}
           alt="eileen's favorite flowers"
         />
       </div>
