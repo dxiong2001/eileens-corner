@@ -1,4 +1,8 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, GridFSBucket } from "mongodb";
+declare global {
+  var client: MongoClient | null;
+  var bucket: GridFSBucket | null;
+}
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
@@ -28,6 +32,36 @@ if (process.env.NODE_ENV === "development") {
   clientPromise = client.connect();
 }
 
-// Export a module-scoped MongoClient promise. By doing this in a
-// separate module, the client can be shared across functions.
+export async function connectToDb() {
+  if (global.client) {
+    return {
+      client: global.client,
+      bucket: global.bucket!,
+    };
+  }
+
+  const client = (global.client = new MongoClient(
+    process.env.MONGODB_URI!,
+    {}
+  ));
+  const bucket = (global.bucket = new GridFSBucket(client.db(), {
+    bucketName: "images",
+  }));
+
+  await global.client.connect();
+  console.log("Connected to the Database ");
+  return { client, bucket: bucket! };
+}
+
+// utility to check if file exists
+export async function fileExists(filename: string): Promise<boolean> {
+  const { client } = await connectToDb();
+  const count = await client
+    .db("eileens-corner-db")
+    .collection("images.files")
+    .countDocuments({ filename });
+
+  return !!count;
+}
+
 export default clientPromise;

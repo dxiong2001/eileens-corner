@@ -4,7 +4,6 @@ import NewReview from "../components/NewReview";
 export default function Movies({ movies }: any) {
   return (
     <div>
-      <NewReview />
       <h1>Top 20 Movies of All Time</h1>
       <p>
         <small>(According to Metacritic)</small>

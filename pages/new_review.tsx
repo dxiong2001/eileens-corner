@@ -4,7 +4,7 @@ import NewReview from "../components/NewReview";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
-function Reviews() {
+function NewReviews() {
   return (
     <>
       <Head>
@@ -46,4 +46,4 @@ function Reviews() {
   );
 }
 
-export default Reviews;
+export default NewReviews;
