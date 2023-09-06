@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <nav className="flex light-bg justify-space">
-      <div className="logo black">
+      <div className="logo black flex">
         {/* <Link href="/">
           
         </Link> */}

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import clientPromise from "../lib/mongodb";
 import Image, { StaticImageData } from "next/image";
+import { useState, useRef, useEffect } from "react";
 
 export default function Review({ reviews, last }: any) {
   return (
@@ -49,7 +50,7 @@ export default function Review({ reviews, last }: any) {
             <img className="main-review-card-image" src={last.imageURL}></img>
             <div className="main-review-card-div">
               <p className="red main-review-card-title">{last.title}</p>
-              <p className="red main-review-card-genre">{last.genre}</p>
+              <p className="red main-review-card-genre">{last.genre + "_"}</p>
             </div>
             <img
               src="https://bluerth.com/wp-content/uploads/2012/02/cherryBlossom.png.webp"
@@ -106,8 +107,55 @@ type Props = {
 };
 
 function ReviewCard({ title, date, genre, review, imageURL }: Props) {
+  const [Alternate, setAlternate] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event: MouseEvent) {
+      console.log("testtttttttttttttttttt");
+      if (ref.current && ref.current.contains(event.target as Node)) {
+        alert("You clicked outside of me!");
+        console.log("hellow world");
+      }
+    }
+    console.log("testtttttttt");
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
   return (
     <div className="light-bg review-card">
+      <div
+        className="review-card-overlay-button1"
+        onClick={() => setAlternate(true)}
+      >
+        <button className="review-card-overlay-button">See More</button>
+      </div>
+
+      {/* {Alternate ? (
+        <button
+          className="review-card-overlay-button2"
+          onClick={() => setAlternate(false)}
+        >
+          
+          <button className="review-card-overlay-button2-button">
+            See More
+          </button>
+        </button>
+      ) : (
+        <button
+          className="review-card-overlay-button1"
+          onClick={() => setAlternate(true)}
+        >
+          
+        </button>
+      )} */}
+      <div className="review-card-top-bar">title</div>
       <div className="review-card-title red">{title}</div>
       <p className="red">{genre}</p>
       <img className="review-card-image" src={imageURL}></img>

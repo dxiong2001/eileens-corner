@@ -133,11 +133,11 @@ nav ul li {
   font-weight: 600;
 }
 #logo-text {
-  font-size: medium;
+  font-size: 20px;
   font-weight: 800;
   color: #f5356c;
-  margin-left: 70px;
-  margin-top: -50px;
+  margin-left: 20px;
+  /* margin-top: -50px; */
 }
 
 .header {
@@ -301,10 +301,12 @@ form button {
   margin-left: 0%;
 }
 .review-card {
+  position: relative;
+  overflow: hidden;
   width: 30%;
   padding: 2rem;
   margin-top: 1.5em;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
 
   text-align: center;
   height: 15%;
@@ -314,6 +316,7 @@ form button {
   border-style: solid;
   border-color: black;
   border-width: 3px;
+  overflow: hidden;
 }
 .review-card h3 {
   font-size: 2.5rem;
@@ -362,13 +365,80 @@ form button {
   width: auto;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  margin-bottom: -20px;
 }
+.review-card-top-bar {
+  background-color: black;
+  width: 200%;
+  height: 30px;
+  margin-left: -50%;
+  margin-bottom: 3%;
+  margin-top: -33px;
+}
+.review-card-overlay-button {
+  position: absolute;
+  background-color: #f5356c;
+  height: 8%;
+  width: 30%;
+  border-radius: 0;
+  margin-left: -4%;
+  margin-top: 50%;
+  font-family: "Roboto Mono";
+}
+.review-card-overlay-button1 {
+  position: absolute;
+  background-color: #29292c;
+  opacity: 0%;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  margin-top: -4px;
+  margin-left: -8%;
+}
+.review-card-overlay-button1:hover {
+  position: absolute;
+  background-color: #29292c;
+  opacity: 90%;
+  height: 100%;
+  width: 150%;
+  border-radius: 0;
+  margin-top: -4px;
+  margin-left: -50%;
+}
+.review-card-overlay-button2 {
+  position: absolute;
+  background-color: #29292c;
+  opacity: 80%;
+  height: 100%;
+  width: 100%;
+  margin-left: -50%;
+  border-radius: 0;
+  margin-top: -4px;
+}
+
+.review-card-overlay-button2-button {
+  font-family: "Roboto Mono";
+  width: 30%;
+  height: 10%;
+  font-size: 1.2em;
+}
+.review-card-overlay {
+  position: absolute;
+  background-color: #29292c;
+  opacity: 75%;
+  height: 100%;
+  width: 100%;
+  margin-top: -5px;
+  margin-left: -32px;
+  align-items: center;
+}
+
 .main-review-card {
   width: 100%;
   padding: 2rem;
-  margin-top: 0.5em;
-  border-radius: 0.5rem;
+  margin-top: -0.1em;
+  /* border-radius: 0.5rem; */
   text-align: center;
   height: 500px;
   text-overflow: ellipsis;
@@ -442,7 +512,7 @@ form button {
   width: auto;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   margin-top: 30px;
   margin-left: -15px;
 }
